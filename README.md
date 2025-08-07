@@ -45,33 +45,24 @@ This repository implements a complete workflow for multiclass classification on 
 ### Phase 1 – Preprocessing & Modeling (Jupyter Notebook)
 
 1. **Environment & Libraries**  
-   - Import `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn` and `pickle`.  
+   - Load necessary Libraries.  
 
 2. **Data Loading & Exploration**  
-   - Load `data/iris.csv` into a DataFrame.
-   - Inspect `.head()`, `.describe()`.
+   - Load dataset & Understand it.
 
 3. **Data Preprocessing**  
-   - Verify and remove duplicates or missing values.  
-   - Encode target labels (`setosa`, `versicolor`, `virginica`) as integers.  
-   - Normalize features using `StandardScaler`.  
-   - Perform a stratified train/test split (70% train / 30% test).
+   - Preprocess data by removing dublicates or missing values, encode the labels, normalize the features & split data into 30-70% ratio.
 
 4. **Model Training & Comparison**  
-   - Define candidate classifiers:  
+   - Experience & Train different models as  
      - Logistic Regression  
      - Support Vector Machine (SVM)  
      - Random Forest  
      - Decision Tree
      - Naive Bayes
-   - Train each model
 
 5. **Evaluation & Selection**  
-   - Evaluate each model on the held-out test set:  
-     - Overall accuracy  
-     - Per-class precision, recall, F1-score  
-     - Confusion matrix  
-   - Summarize results in a comparison table.  
+   - Evaluate each model on the test set.  
    - Select the “best” model based on balanced performance.
 
 6. **Artifact Persistence**  
