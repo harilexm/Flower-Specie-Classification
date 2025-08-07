@@ -1,67 +1,75 @@
-# Iris Flower Species Classification
+# Flower-Species-Classification
 
-![Project Logo](path/to/logo.png)  
-*End-to-end ML pipeline for multiclass classification, with Flask-based web UI.*
+Predict the species of an Iris flower—Setosa, Versicolor, or Virginica—using an end-to-end machine learning pipeline and deploy the best model in a web app.
 
 ---
 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)  
-2. [Features](#features)  
-3. [Prerequisites](#prerequisites)  
-4. [Installation](#installation)  
-5. [Data & Preprocessing](#data--preprocessing)  
-6. [Model Training & Evaluation](#model-training--evaluation)  
-7. [Web Application](#web-application)  
-8. [Results](#results)  
-9. [Project Structure](#project-structure)  
-10. [Future Enhancements](#future-enhancements)  
-11. [Contributing](#contributing)  
-12. [License](#license)  
+2. [Dataset](#dataset)  
+3. [Pipeline & Model Workflow](#pipeline--model-workflow)  
+4. [Installation & Usage](#installation--usage)  
+5. [Results](#results)  
+6. [Project Structure](#project-structure)  
+7. [Future Work](#future-work)  
 
 ---
 
 ## Project Overview
 
-This repository contains a complete machine learning workflow to classify iris flower species:
+This repository implements a complete workflow for multiclass classification on the classic Iris dataset. It covers:
 
-1. **Data ingestion & exploration**  
-2. **Preprocessing** (scaling, train/test split)  
-3. **Model training** with four algorithms  
-4. **Evaluation** using accuracy, precision, recall, F1-score  
-5. **Model selection** and serialization  
-6. **Deployment** via a Flask web interface  
-
-Users can input petal/sepal measurements to receive real-time species predictions and confidence scores.
+- Data ingestion and exploratory analysis  
+- Preprocessing (cleaning, scaling, train/test split)  
+- Training and comparing multiple classifiers  
+- Selecting and persisting the best model  
+- Deploying predictions through a Flask web interface  
 
 ---
 
-## Features
+## Dataset
 
-- **Comprehensive EDA** with summary statistics and visualizations  
-- **Four classifiers**:  
-  - Logistic Regression  
-  - Support Vector Machine  
-  - Random Forest  
-  - Decision Tree  
-- **Automated model selection** based on cross-validated performance  
-- **Model persistence** with `pickle`  
-- **Interactive web UI** built with Flask, HTML/CSS  
+- **Source:** Kaggle Iris dataset (150 samples, 4 features)  
+- **Classes:**  
+  - *Iris-setosa*  
+  - *Iris-versicolor*  
+  - *Iris-virginica*  
+- **Features:** sepal length, sepal width, petal length, petal width  
 
 ---
 
-## Prerequisites
+## Pipeline & Model Workflow
 
-- Python 3.8+  
-- pip (or conda)  
-- Git  
+1. **Libraries**  
+   - pandas, NumPy, scikit-learn, Flask, pickle  
+2. **Load & Explore**  
+   - Read `iris.csv`; inspect summary statistics and class balance  
+3. **Preprocessing**  
+   - Handle duplicates/missing values (if any)  
+   - Standardize features with `StandardScaler`  
+   - Stratified train/test split (70% train, 30% test)  
+4. **Model Selection**  
+   Train and evaluate four algorithms on the test set:  
+   - Logistic Regression  
+   - Support Vector Machine (SVM)  
+   - Random Forest  
+   - Decision Tree  
+5. **Evaluation Metrics**  
+   - Accuracy, precision, recall, F1-score  
+   - Confusion matrix  
+6. **Best Model**  
+   - Select by highest test accuracy and balance of precision/recall  
+7. **Persistence**  
+   - Serialize chosen model and scaler to `models/` with `pickle`  
+8. **Web Deployment**  
+   - Flask app accepts user inputs, returns species prediction and confidence  
 
 ---
 
-## Installation
+## Installation & Usage
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/<your-username>/iris-flower-classification.git
-   cd iris-flower-classification
+   git clone https://github.com/<username>/Flower-Species-Classification.git
+   cd Flower-Species-Classification
