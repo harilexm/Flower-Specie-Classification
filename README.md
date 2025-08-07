@@ -49,7 +49,7 @@ This repository implements a complete workflow for multiclass classification on 
 
 2. **Data Loading & Exploration**  
    - Load `data/iris.csv` into a DataFrame.
-   - Inspect `.head()`, `.describe()`. 
+   - Inspect `.head()`, `.describe()`.
 
 3. **Data Preprocessing**  
    - Verify and remove duplicates or missing values.  
@@ -62,9 +62,9 @@ This repository implements a complete workflow for multiclass classification on 
      - Logistic Regression  
      - Support Vector Machine (SVM)  
      - Random Forest  
-     - Decision Tree  
-   - Fit each model on the training set.  
-   - Record cross-validated metrics (accuracy, precision, recall, F1-score).
+     - Decision Tree
+     - Naive Bayes
+   - Train each model
 
 5. **Evaluation & Selection**  
    - Evaluate each model on the held-out test set:  
@@ -75,33 +75,26 @@ This repository implements a complete workflow for multiclass classification on 
    - Select the “best” model based on balanced performance.
 
 6. **Artifact Persistence**  
-   - Serialize the chosen model to `models/best_model.pkl`.  
-   - Serialize the fitted scaler to `models/scaler.pkl`.  
+   - Save the best model as  `iris_best_model.pkl`.  
+   - Save the LabelEncoder as `label_encoder.pkl` & StandardScaler as `scalar.pkl`.  
 
 ---
 
 ### Phase 2 – Web Application (Python Script)
 
 1. **Dependencies**  
-   - Ensure `Flask`, `pandas`, `numpy`, and `pickle` are installed (see `requirements.txt`).
+   - Ensure `Flask`, `pandas`, `numpy`, and `pickle` are installed.
 
 2. **App Initialization**  
-   - In `app.py`, load `models/best_model.pkl` and `models/scaler.pkl` at startup.  
-   - Configure a Flask application with a single `/predict` route.
+   - Load `best_model.pkl` `label_encoder.pkl`and `scaler.pkl` at startup.
 
 3. **Input Handling & Prediction**  
-   - Render an HTML form (`templates/index.html`) to collect sepal and petal measurements.  
-   - On form submission, parse inputs, apply the loaded `StandardScaler`, and call `model.predict_proba()`.  
+   - From (`templates/index.html`) to collect sepal and petal measurements.  
+   - On form submission, parse inputs, apply the loaded `label_encoder` & `StandardScaler`, and call `model.predict_proba()`.  
    - Determine the predicted class and confidence score.
 
 4. **Response Rendering**  
-   - Display the predicted species and its probability in a clean, responsive UI.  
-   - Serve static assets (CSS, images) from `static/`.
-
-5. **Running the App**  
-   ```bash
-   python app.py
-
+   - Displaying the predicted species and its probability in UI.
 
 ---
 
