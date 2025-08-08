@@ -63,6 +63,7 @@ This repository implements a complete workflow for multiclass classification on 
 ---
 
 ## Installation & Usage
+l
 
 1. **Clone the repo**  
    ```bash
@@ -70,3 +71,5 @@ This repository implements a complete workflow for multiclass classification on 
    cd Flower-Species-Classification
 
 ## Results
+These are results of the Five Algorithms used:
+1. 
