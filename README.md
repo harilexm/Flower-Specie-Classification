@@ -71,10 +71,12 @@ This repository implements a complete workflow for multiclass classification on 
 
 --
 ## Results
+
 These are results of the Five Algorithms used:
 1. 97.78% : Logistic Regression
 2. 95.56% : Decision Tree
 3. 97.78% : Random Forest
 4. 100.0% : SVM
 5. 97.78% : Naive Bayes
+
 The Best model is Choosen an SVM with an accuracy of 100%.
