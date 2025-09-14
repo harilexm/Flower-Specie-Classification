@@ -1,4 +1,4 @@
-# Flower-Species-Classification
+# Flower Species Classification
 
 Predict the species of an Iris flower Setosa, Versicolor or Virginica by using an end-to-end machine learning pipeline and deploy the best model in a web app for user testing.
 
