@@ -12,7 +12,6 @@ Predict the species of an Iris flower Setosa, Versicolor or Virginica by using a
 4. [Installation & Usage](#installation--usage)
 5. [Results](#results)  
 6. [Project Structure](#project-structure)  
-7. [Future Work](#future-work)  
 
 ---
 
