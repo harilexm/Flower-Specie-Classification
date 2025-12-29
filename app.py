@@ -20,8 +20,8 @@ def index():
 
     if request.method == "POST":
         try:
-            features = [float(request.form["f1"]), float(request.form["f2"]), request.form(["f3"]), float(request.form["f4"])]
-            X = np.array(features).shape(1, -1)
+            features = [float(request.form["f1"]), float(request.form["f2"]), float(request.form["f3"]), float(request.form["f4"])]
+            X = np.array(features).reshape(1, -1)
 
             probs = model.predict_proba(X)[0]
             class_index = np.argmax(probs)
@@ -29,6 +29,7 @@ def index():
             prediction = encoder.inverse_transform([class_index])[0]
             confidence = round(probs[class_index] * 100, 2)
             probabilities = dict(zip(encoder.classes_, (probs * 100).round(2)))
+            
         except Exception as e:
             print("prediction error:", e)
 
