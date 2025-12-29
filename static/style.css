@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
@@ -47,9 +45,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
-}
+button:hover {background: #0056b3;}
 
 .result {
     margin-top: 20px;
@@ -58,10 +54,5 @@ button:hover {
     border-radius: 6px;
 }
 
-.result h3 {
-    margin-bottom: 5px;
-}
-
-.result ul {
-    padding-left: 18px;
-}
+.result h3 {margin-bottom: 5px;}
+.result ul {padding-left: 18px;}
