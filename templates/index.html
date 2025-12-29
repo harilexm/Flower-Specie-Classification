@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Iris Flower Prediction</title>
-    <style>
-        label {
-            display: inline-block;
-            width: 100px; 
-            margin-bottom: 5px;
-        }
-        input {
-            display: inline-block;
-            margin-bottom: 8px;
-            padding: 4px; 
-            width: 150px; 
-        }
-        button {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-    <h1>Iris Flower Prediction</h1>
-    <form action="/predict" method="post">
-        <label for="sepal_length">Sepal Length:</label>
-        <input type="text" id="sepal_length" name="sepal_length" required><br>
-        
-        <label for="sepal_width">Sepal Width:</label>
-        <input type="text" id="sepal_width" name="sepal_width" required><br>
-        
-        <label for="petal_length">Petal Length:</label>
-        <input type="text" id="petal_length" name="petal_length" required><br>
-        
-        <label for="petal_width">Petal Width:</label>
-        <input type="text" id="petal_width" name="petal_width" required><br>
-        
+
+<div class="container">
+    <h2>ML Model Prediction</h2>
+
+    <form method="POST">
+        <input type="number" step="any" name="f1" placeholder="Feature 1" required>
+        <input type="number" step="any" name="f2" placeholder="Feature 2" required>
+        <input type="number" step="any" name="f3" placeholder="Feature 3" required>
+        <input type="number" step="any" name="f4" placeholder="Feature 4" required>
+
         <button type="submit">Predict</button>
     </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>Prediction: {{ prediction }}</h3>
+        <p>Confidence: {{ confidence }}%</p>
+
+        <h4>Class Probabilities</h4>
+        <ul>
+            {% for cls, prob in probabilities.items() %}
+                <li>{{ cls }} : {{ prob }}%</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
 </body>
-</html>
-
-
-
+</html>    
