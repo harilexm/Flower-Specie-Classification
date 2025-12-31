@@ -39,7 +39,7 @@ This repository implements a complete workflow for multiclass classification on 
 
 ---
 
-## Pipeline & Model Workflow
+## System Overview
 
 ### Phase 1 – Preprocessing & Modeling (Jupyter Notebook)
 
@@ -72,10 +72,10 @@ This repository implements a complete workflow for multiclass classification on 
 ## Results
 
 These are results of the Five Algorithms used:
-1. 97.78% : Logistic Regression
-2. 95.56% : Decision Tree
-3. 97.78% : Random Forest
-4. 100.0% : SVM
-5. 97.78% : Naive Bayes
+1. 95.19% : Logistic Regression
+2. 95.14% : Decision Tree
+3. 96.710% : Random Forest
+4. 97.10% : SVM
+5. 95.14% : Naive Bayes
 
-The Best model is Choosen an SVM with an accuracy of 100%.
+The Best model is Choosen an SVM with an accuracy of 97.10%.
