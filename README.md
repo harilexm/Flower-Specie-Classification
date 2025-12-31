@@ -9,7 +9,7 @@ Predict the species of an Iris flower Setosa, Versicolor or Virginica by using a
 
 1. [Project Overview](#project-overview)  
 2. [Dataset](#dataset)  
-3. [Pipeline & Model Workflow](#pipeline--model-workflow)  
+3. [System](#Model-backend-frontend)  
 4. [Installation & Usage](#installation--usage)
 5. [Results](#results)  
 6. [Project Structure](#project-structure)  
