@@ -48,7 +48,7 @@ This repository implements a complete workflow for multiclass classification on 
 3. **Data Preprocessing**
 4. **Model Training & Comparison**  
 5. **Evaluation & Selection**  
-6. **Saving Model, Encoder & Scalar as .pkl**
+6. **Saving Model & Encoder as .pkl**
    
 ---
 
