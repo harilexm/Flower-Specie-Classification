@@ -79,4 +79,4 @@ These are results of the Five Algorithms used:
 4. 97.10% : SVM
 5. 95.14% : Naive Bayes
 
-The Best model is Choosen an SVM with an accuracy of 97.10%.
+The Choosen Best model is SVM with an accuracy of 97.10%.
